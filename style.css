@@ -22,41 +22,39 @@ h1{
     margin-bottom: 10px;
 }
 .content{
-    
     width: 80%;
 }
 .content section{
     width: 80%;
 }
-.accordions{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-}
-.accordions a{
-    width: 90%;
-    height: 25px;
-    text-align: left;
-    margin-bottom: 5px;
 
-    text-decoration: none;
-    color: inherit;
-
-    border: 1px solid white;
-    padding: 5px;
-}
-
-.questions{
-    border: 1px solid white;
-    margin: 3px 0 3px 0;
-    padding: 10px;
+.acc{
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
     width: 100%;
-
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin-bottom: 5px;
 }
 
-.button-container-div {
-    text-align: center;
-    height: 40vh;
-    width: 60vw;
-}
+.panel {
+    padding: 25px;
+    padding-left: 40px!important;
+    display: none;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px white solid;
+    border-radius: 90px 0 90px 0px;
+  }
+
+  .active, .acc:hover {
+    background-color: #ccc;
+  }
+
+  .panel table{
+      margin-bottom: 5px;
+  }
