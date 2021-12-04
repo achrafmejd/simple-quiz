@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="./style.css">
     <title>Quiz</title>
 </head>
@@ -14,150 +15,317 @@
             <div class="meta">
                 <p>Instructions</p>
                 <ul>
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque recusandae obcaecati beatae exercitationem neque, illum pariatur reprehenderit tempore. Totam eaque facere debitis reprehenderit consequuntur dicta, officia ratione earum nobis sequi?</li>
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque recusandae obcaecati beatae exercitationem neque, illum pariatur reprehenderit tempore. Totam eaque facere debitis reprehenderit consequuntur dicta, officia ratione earum nobis sequi?</li>
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque recusandae obcaecati beatae exercitationem neque, illum pariatur reprehenderit tempore. Totam eaque facere debitis reprehenderit consequuntur dicta, officia ratione earum nobis sequi?</li>
+                    <li>Le quiz contient 15 questions en HTML, CSS et JAVASCRIPT. Cochez la bonne réponse !</li>
+                    <li>Pour valider le test, il faut répondre à au moins 3 questions dans chaque partie</li>
+                    <li>Si vous cliquer sur <img src="./hint.png" width="15" height="15"> votre réponse sera comptée comme fausse </li>
                 </ul>
             </div>
 
             <form id="form" action="index.html" method="get">
                 <!-- Accordions -->
+
                 <button type="button" class="acc">HTML</button>
-                <div class="panel">
-                    <h4>Question 1 :</h4>
-                    <p>Le rôle du HTML est...</p>
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="qst1"  class="qst1" value="Mettre en forme du text"></td>
-                            <td>Mettre en forme du text</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1" class="qst1" value="Ordonner du contenu"></td>
-                            <td>Ordonner du contenu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1" class="qst1" value="Créer des sites e-commerce"></td>
-                            <td>Créer des sites e-commerce</td>
-                        </tr>
-                    </table>
-                    <a href="#/" onclick="hint(`html.qst1`)"><img src="./hint.png" width="25" height="25" alt=""></a>
-                </div>
-                <div class="panel">
-                    <h4>Question 2 :</h4>
-                    <p>Pour définir un titre dans une page HTML, on utilise...</p>
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="qst2"  class="qst2" value="L'élément title"></td>
-                            <td>L'élément title</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst2" class="qst2" value="L'élément head"></td>
-                            <td>L'élément head</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst2" class="qst2" value="Un élément h1, h2,...h6"></td>
-                            <td>Un élément h1, h2,...h6</td>
-                        </tr>
-                    </table>
-                    <a href="#/" onclick="hint(`html.qst2`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                <div class="panels" id="allHTML">
+                    <div class="panel">
+                        <h4>Question 1 :</h4>
+                        <p>Le rôle du HTML est...</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst1"  class="qst1" value="Mettre en forme du text" onchange="update(`html`)"></td>
+                                <td>Mettre en forme du text</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="Ordonner du contenu" onchange="update(`html`)"></td>
+                                <td>Ordonner du contenu</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="Créer des sites e-commerce" onchange="update(`html`)"></td>
+                                <td>Créer des sites e-commerce</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`html.qst1`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 2 :</h4>
+                        <p>Pour définir un titre dans une page HTML, on utilise...</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst2"  class="qst2" value="L'élément title" onchange="update(`html`)"></td>
+                                <td>L'élément title</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="L'élément head" onchange="update(`html`)"></td>
+                                <td>L'élément head</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="Un élément h1, h2,...h6" onchange="update(`html`)"></td>
+                                <td>Un élément h1, h2,...h6</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`html.qst2`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 3 :</h4>
+                        <p>Quel balise est utilisée pour écrire un paragraphe ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst3"  class="qst3" value="La balise h1" onchange="update(`html`)" ></td>
+                                <td>La balise h1</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst3" value="La balise p"  onchange="update(`html`)"></td>
+                                <td>La balise p</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst3" value="La balise a"  onchange="update(`html`)"></td>
+                                <td>La balise a</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`html.qst3`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 4 :</h4>
+                        <p>Quel balise est utilisée pour utiliser du css ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst4"  class="qst4" value="La balise css" onchange="update(`html`)"></td>
+                                <td>La balise css</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="La balise style" onchange="update(`html`)"></td>
+                                <td>La balise style</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="La balise link" onchange="update(`html`)"></td>
+                                <td>La balise link</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`html.qst4`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 5 :</h4>
+                        <p>Quel balise est utilisée pour utiliser du javascript ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst5"  class="qst5" value="La balise javascript" onchange="update(`html`)"></td>
+                                <td>La balise javascript</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="La balise js" onchange="update(`html`)"></td>
+                                <td>La balise js</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="La balise script" onchange="update(`html`)"></td>
+                                <td>La balise script</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`html.qst5`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
                 </div>
                 <button type="button" class="acc">CSS</button>
-                <div class="panel">
-                    <h4>Question 1 :</h4>
-                    <p>Le rôle du HTML est...</p>
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Mettre en forme du text</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Ordonner du contenu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Créer des sites e-commerce</td>
-                        </tr>
-                    </table>
+                <div class="panels" id="allCSS">
+                    <div class="panel">
+                        <h4>Question 1 :</h4>
+                        <p>Comment cibler un element défini par id en css ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst1"  class="qst1" value="En utilisant le hashtag #" onchange="update(`css`)"></td>
+                                <td>En utilisant le hashtag #</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="En utilisant le point ." onchange="update(`css`)"></td>
+                                <td>En utilisant le point .</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="En utilisant le dollar $" onchange="update(`css`)"></td>
+                                <td>En utilisant le dollar $</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`css.qst1`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 2 :</h4>
+                        <p>Quel attribut est utilisé pour changer la couleur du background ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst2"  class="qst2" value="L'attribut color" onchange="update(`css`)"></td>
+                                <td>L'attribut color</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="L'attribut background" onchange="update(`css`)"></td>
+                                <td>L'attribut background</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="L'attribut background-color" onchange="update(`css`)"></td>
+                                <td>L'attribut background-color</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`css.qst2`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 3 :</h4>
+                        <p>Comment rendre un element invisible ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst3"  class="qst3" value="display: none;" onchange="update(`css`)"></td>
+                                <td>display: none;</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst3" value="display: invisible;" onchange="update(`css`)"></td>
+                                <td>display: invisible;</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst3" value="display: non-visible;" onchange="update(`css`)"></td>
+                                <td>display: non-visible;</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`css.qst3`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 4 :</h4>
+                        <p>Comment écrire un commentaire en css ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst4"  class="qst4" value="En utilisant les <!--comment--> " onchange="update(`css`)"></td>
+                                <td>En utilisant les < !-- comment -- > </td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="En utilisant les //" onchange="update(`css`)"></td>
+                                <td>En utilisant les //</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="En utilisant les /* */" onchange="update(`css`)"></td>
+                                <td>En utilisant les /* */</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`css.qst4`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 5 :</h4>
+                        <p>Comment intégrer du javascript en css?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst5"  class="qst5" value="En utilisant la balise script" onchange="update(`css`)"></td>
+                                <td>En utilisant la balise script</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="En utilisant la balise js" onchange="update(`css`)"></td>
+                                <td>En utilisant la balise js</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="Aucun" onchange="update(`css`)"></td>
+                                <td>Aucun</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`css.qst5`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
                 </div>
                 <button type="button" class="acc">JAVASCRIPT</button>
-                <div class="panel">
-                    <h4>Question 1 :</h4>
-                    <p>Le rôle du HTML est...</p>
-                    <table>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Mettre en forme du text</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Ordonner du contenu</td>
-                        </tr>
-                        <tr>
-                            <td><input type="radio" name="qst1"></td>
-                            <td>Créer des sites e-commerce</td>
-                        </tr>
-                    </table>
+                <div class="panels" id="allJS">
+                    <div class="panel">
+                        <h4>Question 1 :</h4>
+                        <p>Comment déclarer une fonction en javascript ? En utilisant, le mot-clé ...</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst1"  class="qst1" value="function" onchange="update(`js`)"></td>
+                                <td>function</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="fonction" onchange="update(`js`)"></td>
+                                <td>fonction</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst1" class="qst1" value="functions" onchange="update(`js`)"></td>
+                                <td>functions</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`javascript.qst1`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 2 :</h4>
+                        <p>Comment déclarer une constante en js ? En utilisant le mot-clé...</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst2"  class="qst2" value="constante" onchange="update(`js`)"></td>
+                                <td>constante</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="let" onchange="update(`js`)"></td>
+                                <td>let</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst2" class="qst2" value="const" onchange="update(`js`)"></td>
+                                <td>const</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`javascript.qst2`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 3 :</h4>
+                        <p>Quelle methode nous permet de diviser une chaîne de caractère ?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst3"  class="qst3" value="La méthod String.split()" onchange="update(`js`)"></td>
+                                <td>La méthod String.split()</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst5" value="La méthod String.divide()" onchange="update(`js`)"></td>
+                                <td>La méthod String.divide()</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst3" class="qst3" value="La méthod String.explode()" onchange="update(`js`)"></td>
+                                <td>La méthod String.explode()</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`javascript.qst3`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 4 :</h4>
+                        <p>Comment utiliser la boucle for en js?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst4"  class="qst4" value="for(condition; declaration incrementation)" onchange="update(`js`)"></td>
+                                <td>for(condition; declaration incrementation)</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="for(declaration; condition; incrementation)" onchange="update(`js`)"></td>
+                                <td>for(declaration; condition; incrementation)</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst4" class="qst4" value="for(incrementation; condition; declaration)" onchange="update(`js`)"></td>
+                                <td>for(incrementation; condition; declaration)</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`javascript.qst4`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
+                    <div class="panel">
+                        <h4>Question 5 :</h4>
+                        <p>Comment intégrer du javascript en css?</p>
+                        <table>
+                            <tr>
+                                <td><input type="radio" name="qst5"  class="qst5" value="String.tolowerCase()" onchange="update(`js`)"></td>
+                                <td>String.tolowerCase()</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="String.toLowercase()" onchange="update(`js`)"></td>
+                                <td>String.toLowercase()</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="qst5" class="qst5" value="String.toLowerCase()" onchange="update(`js`)"></td>
+                                <td>String.toLowerCase()</td>
+                            </tr>
+                        </table>
+                        <a href="#/" onclick="hint(`javascript.qst5`)"><img src="./hint.png" width="25" height="25" alt=""></a>
+                    </div>
                 </div>
+                
+                    <div class="center">
+                      <button id="validate" type="submit" disabled>Centered Button</button>
+                    </div>
+            
             </form>
         </section>
     </div>
 </body>
-<script>
-    const acc = document.getElementsByClassName("acc");
-    // Expand onclick
-    for (let i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-    // Get hint
-    const trueAnswers = [
-        {
-            part : "html",
-            answers : {
-                qst1 : "Mettre en forme du text",
-                qst2 : "L'élément title"
-            }
-        },
-        {
-            part : "css",
-            answers : {
-                qst1 : "Mettre en forme du text"
-            }
-        },
-        {
-            part : "javascript",
-            answers : {
-                qst1 : "Mettre en forme du text"
-            }
-        }
-    ]
-    function hint(e) {
-        const part = e.split(".")[0];
-        const question = e.split(".")[1];
-        trueAnswers.forEach(element => {
-            // go to specific part
-            if(element.part === part){
-                // get the questions collections for that question
-                const questionsCollection = document.getElementsByClassName(question);
-                // check for each element of the collection if its default value is equal to the true value
-                for (let q of questionsCollection) {
-                    if(q.defaultValue === element.answers[question]){
-                        // turn it to checked
-                        q.checked = true;
-                        return;
-                    }
-                }
-            }
-        });
-    }
-     
-</script>
+<script src="./index.js"></script>
 </html>

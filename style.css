@@ -40,12 +40,13 @@ h1{
     transition: 0.4s;
     margin-bottom: 5px;
 }
-
+.panels{
+    display: none;
+    overflow: hidden;
+}
 .panel {
     padding: 25px;
     padding-left: 40px!important;
-    display: none;
-    overflow: hidden;
     margin-bottom: 15px;
     border: 1px white solid;
     border-radius: 90px 0 90px 0px;
@@ -57,4 +58,14 @@ h1{
 
   .panel table{
       margin-bottom: 5px;
+  }
+
+  
+  .center {
+   display: flex;
+   justify-content: center;
+  }
+
+  .center button{
+      padding: 8px;
   }
